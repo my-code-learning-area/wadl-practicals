@@ -15,7 +15,7 @@ const port = 2324
 
 /* *********************Defining Routs and Controllers********************* */
 
-// c. Insert array of 5 song documents in above Collection. 
+// c. Insert array of 5 song documents in Collection. 
 // h. Add new song which is your favorite.
 app.post("/add", async function (request, response) {
     // get data from body
@@ -31,9 +31,10 @@ app.get("/displayCountAndDocuments", async function (request, response) {
 })
 
 // e. List specified Music Director songs.
+// localhost:2324/getSongsOfDirector/saif
 app.get("/getSongsOfDirector/:directorName", async function (request, response) {
     const directorName = request.params.directorName
-    const songs = await Songdetails.find({ Music_director: directorName }, { Songname: 1 })
+    const songs = await Songdetails.find({ Music_director: directorName })
     response.send(songs)
 })
 

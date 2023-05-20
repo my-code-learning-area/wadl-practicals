@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>statement 6</title>
-    <style>
+    <style> /* OPTIONAL */
         table {
             border-collapse: collapse;
         }
@@ -20,9 +20,9 @@
 
 <body>
     <form id="inputForm">
-        Input1: <input type="text" name="input1" id="input1" value="3#3#3">
+        Input1: <input type="text" name="input1" value="3#3#3">
         <br><br>
-        Input2: <input type="text" name="input2" id="input2" value="3#3#3">
+        Input2: <input type="text" name="input2" value="3#3#4">
         <hr>
         <button>Submit</button>
     </form>
@@ -37,6 +37,8 @@
 
     <script>
         const form = document.forms.inputForm
+        //OR
+        // const form = document.getElementById("inputForm")
         form.addEventListener("submit", formSubmit)
 
         function createTable(input) { // [rows, columns, startIndex]
@@ -76,6 +78,7 @@
 
         function displayTable(table, id) {
             const tableOutput = document.getElementById(id)
+
             let html = "";
             for (let i = 0; i < table.length; i++) {
                 html += "<tr>";

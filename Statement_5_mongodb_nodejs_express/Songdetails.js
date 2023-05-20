@@ -11,4 +11,4 @@ const SongdetailsSchema = new mongoose.Schema({
 
 // creating Model of defined schema `SongdetailsSchema` and then exporting
 const Songdetails = mongoose.model("songdetails", SongdetailsSchema);
-module.exports = Songdetails;
+module.exports = Songdetails; 
