@@ -1,23 +1,25 @@
-# Perform following tasks using nodejs, Expressjs and MongoDB. Following operation should be perform in Nodejs and Expressjs only
+# Perform following tasks using nodejs, Expressjs and MongoDB. Following operation should be perform in Nodejs and Expressjs only. 
 
-a. Create a Database called student.
+a. Create a Database called music.
 
-b. Create a collection called student marks
+b. Create a collection called songdetails
 
-c. Insert array of documents in above Collection. 
-  - Document have following field:
-    - Name, Roll_No, WAD_Marks, CC_Marks, DSBDA_Marks,CNS_Marks,AI_marks 
+c. Insert array of 5 song documents in above Collection. 
+  - Document have following field: 
+    - Songname, Film, Music_director, singer
 
-d.  Display total count of documents and List all the documents in browser.
+d. Display total count of documents and List all the documents in browser.
 
-e.  List the names of students who got more than 20 marks in DSBDA Subject in browser.
+e. List specified Music Director songs.
 
-f.  Update the marks of Specified students by 10.
+f. List specified Music Director songs sung by specified Singer
 
-g.  List the names who got more than 25 marks in all subjects in browser.
+g. Delete the song which you don’t like. 
 
-h.  List the names who got less than 40 in both Maths and Science in browser.
+h. Add new song which is your favorite.
 
-i.  Remove specified student document from collection.
+i. List Songs sung by Specified Singer from specified film.
 
-j.  Display the Students data in Browser in tabular forma
+j. Update the document by adding Actor and Actress name.
+
+k. Display the data in Browser in tabular format.
