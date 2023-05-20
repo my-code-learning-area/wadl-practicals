@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement 03</title>
+</head>
+
+<body>
+    <br> <br> <br> <br> <br>
+    <center>
+        <form id="my-form">
+            First Name: <input type="text" name="FName" id="FName">
+            <br><br>
+            Last Name: <input type="text" name="LName" id="LName">
+            <br><br>
+            Your Age: <input type="number" name="Age" id="Age">
+            <br><br>
+            Username: <input type="text" name="Username" id="Username">
+            <br><br>
+            Password: <input type="password" name="Password" id="Password">
+            <br><br>
+            <button>Submit</button>
+        </form>
+    </center>
+
+    <script>
+        document.getElementById("my-form").addEventListener("submit", formSubmit)
+
+        function formSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            var firstName = document.getElementById('FName').value;
+            var lastName = document.getElementById('LName').value;
+            var age = document.getElementById('Age').value;
+            var username = document.getElementById('Username').value;
+            var password = document.getElementById('Password').value;
+
+            // Create user object
+            var user = { firstName, lastName, age, username, password };
+
+            // Get existing data from local storage or initialize an empty array
+            var userList = JSON.parse(localStorage.getItem('userList')) || [];
+
+            // Add the new user to the array
+            userList.push(user);
+
+            // Save the updated user list to local storage
+            localStorage.setItem('userList', JSON.stringify(userList));
+
+            const w = window.open();
+            let array = JSON.parse(localStorage.getItem('userList'))
+            let html = "<hr>"
+            array.map((val) => {
+                html += "<p>First Name: " + val.firstName + "</p>"
+                html += "<p>Last Name: " + val.lastName + "</p>"
+                html += "<p>Age: " + val.age + "</p>"
+                html += "<p>Username: " + val.username + "</p>"
+                html += "<p>Password: " + val.password + "</p>"
+                html += "<hr>"
+            })
+            w.document.body.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>
