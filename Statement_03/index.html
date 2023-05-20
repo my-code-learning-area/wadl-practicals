@@ -12,15 +12,15 @@
     <br> <br> <br> <br> <br>
     <center>
         <form id="my-form">
-            First Name: <input type="text" name="FName" id="FName">
+            First Name: <input required type="text" name="FName" id="FName">
             <br><br>
-            Last Name: <input type="text" name="LName" id="LName">
+            Last Name: <input required type="text" name="LName" id="LName">
             <br><br>
-            Your Age: <input type="number" name="Age" id="Age">
+            Your Age: <input required type="number" name="Age" id="Age">
             <br><br>
-            Username: <input type="text" name="Username" id="Username">
+            Username: <input required type="text" name="Username" id="Username">
             <br><br>
-            Password: <input type="password" name="Password" id="Password">
+            Password: <input required type="password" name="Password" id="Password">
             <br><br>
             <button>Submit</button>
         </form>
@@ -53,6 +53,7 @@
 
             const w = window.open();
             let array = JSON.parse(localStorage.getItem('userList'))
+            array.reverse()
             let html = "<hr>"
             array.map((val) => {
                 html += "<p>First Name: " + val.firstName + "</p>"
