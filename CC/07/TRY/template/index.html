@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>
+			Pincode
+		</title>
+	</head>
+	<body>
+		<form method="post" action="/">
+		<input type="text" pattern="\d*" maxlength="6" oninput="this.value=this.value.replace(/[^0-9]/g,'').substring(0,6)" name="pincode" required/>
+		<button type="submit">SUBMIT</button>
+	</body>
+</html>
