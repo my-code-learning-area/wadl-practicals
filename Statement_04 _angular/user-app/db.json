@@ -13,6 +13,13 @@
       "email": "sumit@gmail.com",
       "password": "password",
       "id": 2
+    },
+    {
+      "fname": "saif",
+      "number": 2938409809485,
+      "email": "saif@gmail.com",
+      "password": "password",
+      "id": 3
     }
   ]
 }
