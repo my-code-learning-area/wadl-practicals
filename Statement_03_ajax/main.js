@@ -57,21 +57,23 @@ function formSubmit(event) {
 
     let postObj = { name, phone, div };
 
-    let xhr = new XMLHttpRequest();
+    $.ajax({
+        type: 'POST',
+        url: 'https://jsonplaceholder.typicode.com/users',
+        data: JSON.stringify(postObj),
+        contentType: "application/json; charset=utf-8",
 
-    xhr.open("POST", "https://jsonplaceholder.typicode.com/users");
-    xhr.setRequestHeader('Content-type', 'application/json', 'charset=UTF-8');
-    xhr.send(JSON.stringify(postObj));
-
-    xhr.onload = () => {
-        if (xhr.status == 201) {
+        success: function (newUser) {
             let arr = JSON.parse(localStorage.getItem('users'));
-            arr.unshift(postObj);
+            arr.unshift(newUser);
             localStorage.setItem('users', JSON.stringify(arr));
             DisplayData();
-        } else {
+        },
+        error: function (error) {
+            console.log(error)
             DisplayData();
         }
-    };
+    });
+
 }
 
