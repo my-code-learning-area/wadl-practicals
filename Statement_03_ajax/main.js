@@ -47,6 +47,8 @@ function DisplayData() {
     w.document.body.innerHTML = html;
 }
 
+FetchData();
+
 document.forms.registrationForm.addEventListener("submit", formSubmit)
 
 function formSubmit(event) {
