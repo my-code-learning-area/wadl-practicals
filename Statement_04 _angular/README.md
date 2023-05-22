@@ -1,4 +1,4 @@
-# Angular
+## Angular
 
 > Reverence Video:
 
@@ -7,25 +7,25 @@
 
 
 
-# create app
+## create app
 
 
     ng new app-name
 
 
-# create component
+## create component
 
 
     ng g c component-name
 
 
-# start angular
+## start angular
 
 
     ng serve
 
 
-# start json-server
+## start json-server
 
     json-server --watch <file-location>.json
 
