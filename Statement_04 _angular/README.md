@@ -36,7 +36,7 @@
 
 *   npm i 
 
-*   npm i -g
+*   npm i -D
 
 *   npm i -g json-server
 
