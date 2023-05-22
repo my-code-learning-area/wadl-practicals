@@ -1,0 +1,18 @@
+<div class="w-50 my-5 p-5 border shadow mx-auto">
+    <h1>Signup Form:</h1>
+    <hr>
+    <form (submit)="signupSubmit(fullname.value, email.value, username.value, password.value)">
+        <input type="text" #fullname class="form-control" placeholder="Full Name">
+        <br>
+        <input type="email" #email class="form-control" placeholder="Email">
+        <br>
+        <input type="text" #username class="form-control" placeholder="Username">
+        <br>
+        <input type="password" #password class="form-control" placeholder="Password">
+        <br>
+        <button class="btn btn-primary">Signup</button>
+        <br>
+        <br>
+        <a href="/login">Login?</a>
+    </form>
+</div>
