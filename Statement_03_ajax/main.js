@@ -68,7 +68,7 @@ function formSubmit(event) {
 
         success: function (newUser) {
             let arr = JSON.parse(localStorage.getItem('users')) || []; // if array not present in localStorage then take empty array
-            arr.unshift(newUser);
+            arr.unshift(newUser); // add element at the start of array
             localStorage.setItem('users', JSON.stringify(arr));
             DisplayData();
         },
