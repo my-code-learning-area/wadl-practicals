@@ -53,6 +53,7 @@ document.forms.registrationForm.addEventListener("submit", formSubmit)
 
 function formSubmit(event) {
     event.preventDefault();
+
     let name = document.getElementById('name').value;
     let phone = document.getElementById('phone').value;
     let div = document.getElementById('div').value;
@@ -66,7 +67,7 @@ function formSubmit(event) {
         contentType: "application/json; charset=utf-8",
 
         success: function (newUser) {
-            let arr = JSON.parse(localStorage.getItem('users'));
+            let arr = JSON.parse(localStorage.getItem('users')) || []; // if array not present in localStorage then take empty array
             arr.unshift(newUser);
             localStorage.setItem('users', JSON.stringify(arr));
             DisplayData();
@@ -78,4 +79,3 @@ function formSubmit(event) {
     });
 
 }
-
