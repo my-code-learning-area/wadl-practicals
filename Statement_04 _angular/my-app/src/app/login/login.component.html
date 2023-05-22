@@ -1,0 +1,17 @@
+<div class="w-50 my-5 p-5 border shadow rounded mx-auto">
+    <h1>Login Form</h1>
+    <hr>
+    <form (submit)="formSubmit(username.value, password.value)">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" #username placeholder="Username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" #password placeholder="Password">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+        <hr>
+        <a routerLink="/signup">Signup?</a>
+    </form>
+</div>
