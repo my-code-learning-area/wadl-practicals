@@ -47,14 +47,23 @@
                 table.push([])
             }
 
-            let startHead = input[2]
+            let count = input[2]
+            for(let j = 0; j < input[1]; j++) {
+                table[0][j] = count++
+                for(let i = 0; i < input[0]; i++) {
+                    table[i][j] = (i + 1) * table[0][j]
+                }
+            }
+
+            // old code
+            /* let startHead = input[2]
             for (let col = 0; col < input[1]; col++) {
                 let currentHead = startHead++
                 table[0][col] = currentHead
                 for (let row = 1; row < input[0]; row++) {
                     table[row][col] = (row + 1) * currentHead
                 }
-            }
+            } */
 
             return table;
         }
