@@ -7,9 +7,14 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
     path:"",
-    redirectTo:"login",
-    pathMatch:"full"
+    component: LoginComponent
   },
+  // // OR
+  // { 
+  //   path:"",
+  //   redirectTo:"login",
+  //   pathMatch:"full"
+  // },
   {
     path: "login",
     component: LoginComponent
