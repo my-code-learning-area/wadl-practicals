@@ -1,19 +1,5 @@
-function FetchData() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
-    xhr.send();
-    xhr.onload = () => {
-        let response = xhr.responseText;
-        let arr = JSON.parse(localStorage.getItem('users'));
-        if (!arr) {
-            localStorage.setItem("users", response);
-        }
-        // DisplayData();
-    };
-}
-
 function DisplayData() {
-    let users = JSON.parse(localStorage.getItem("users"));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
     let html = ` <center>
     <table border='2px'>
         <thead>
@@ -33,11 +19,11 @@ function DisplayData() {
     `;
     users.forEach(element => {
         html += `
-        <tr>
-        <td>${element?.name}</td>
-        <td>${element?.phone}</td>
-        <td>${element?.div || "11"}</td>
-        </tr>
+            <tr>
+                <td>${element?.name}</td>
+                <td>${element?.phone}</td>
+                <td>${element?.div || "11"}</td>
+            </tr>
         `
     })
 
@@ -47,7 +33,12 @@ function DisplayData() {
     w.document.body.innerHTML = html;
 }
 
-FetchData();
+function addAndDisplayData(data) {
+    let arr = JSON.parse(localStorage.getItem('users')) || []; // if array not present in localStorage then take empty array
+    arr.unshift(data); // add element at the start of array
+    localStorage.setItem('users', JSON.stringify(arr));
+    DisplayData();
+}
 
 document.forms.registrationForm.addEventListener("submit", formSubmit)
 
@@ -64,17 +55,14 @@ function formSubmit(event) {
         type: 'POST',
         url: 'https://jsonplaceholder.typicode.com/users',
         data: JSON.stringify(postObj),
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/json",
 
         success: function (newUser) {
-            let arr = JSON.parse(localStorage.getItem('users')) || []; // if array not present in localStorage then take empty array
-            arr.unshift(newUser); // add element at the start of array
-            localStorage.setItem('users', JSON.stringify(arr));
-            DisplayData();
+            addAndDisplayData(postObj)
         },
         error: function (error) {
             console.log(error)
-            DisplayData();
+            addAndDisplayData(postObj)
         }
     });
 
