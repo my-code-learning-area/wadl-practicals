@@ -6,44 +6,44 @@
 
 *   create `Dockerfile`
 
-    from node:18-alpine
+        from node:18-alpine
 
-    WORKDIR /
+        WORKDIR /
 
-    copy . .
+        copy . .
 
-    RUN npm i
+        RUN npm i
 
-    cmd ["npm", "start"]
+        cmd ["npm", "start"]
 
-    EXPOSE 3000
+        EXPOSE 3000
 
 
 *   Create a image file:
 
-    sudo docker build -t test-image .
+        sudo docker build -t test-image .
 
 
 *   List docker images
 
-    sudo docker image ls
+        sudo docker image ls
 
 
 *   Crate a docker container form image `test-image`
 
-    sudo docker run -dp 3000:3000 test-image
+        sudo docker run -dp 3000:3000 test-image
 
 
 *   List of running containers
 
-    sudo docker container ls
+        sudo docker container ls
 
 
 *   Stop running container
 
-    sudo docker container stop kind_ishizaka
+        sudo docker container stop kind_ishizaka
 
 
 *   Start Stopped Container
 
-    sudo docker container start kind_ishizaka
+        sudo docker container start kind_ishizaka
